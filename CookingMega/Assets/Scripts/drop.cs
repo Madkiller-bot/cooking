@@ -4,43 +4,54 @@ using UnityEngine;
 
 public class drop : MonoBehaviour
 {
-    private GameObject food;
-    public GameObject dropplace;
-    public bool cooking;
-    Collider b_collier;
 
+    public GameObject CookingTransform;
+    public static bool cook = false;
+    GameObject Food;
+    float CookingTime = 0f;
+    Renderer rend;
+  //  public Material AfterBunMaterial;
 
     private void Start()
     {
-        b_collier = GetComponent<BoxCollider>();
+       
     }
-
+    public void Update()
+    {
+       
+    }
+   
     private void OnTriggerEnter(Collider other)
     {
-        food = GameObject.FindGameObjectWithTag("cheese");
-
-        food.transform.position = dropplace.transform.position;
-        food.transform.parent = GameObject.Find("CookingPan").transform;
-
-        cooking = true;
-        if (cooking = true)
+        if (!playerMovements.canhold)
         {
-            b_collier.enabled = false;
+
+            Debug.Log("Item in hand is true");
+            Food = GameObject.FindGameObjectWithTag("cheese");
+            Food.transform.position = CookingTransform.transform.position;
+            Food.transform.parent = GameObject.Find("CookingPan").transform;
+            cook = true;
+            playerMovements.canhold = true;
+           
+
         }
-        //if( Input.GetKeyDown(KeyCode.E))
-        //{
-        //    food.transform.parent = GameObject.Find("ObjectTransform").transform;
-        //}
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        cooking = false;
-        if (cooking = false)
+        else
         {
-            b_collier.enabled = true;
+            Debug.Log("GO and GEt the Iteam");
         }
+
+
+
+
+
+
+
+
     }
-
-
-
 }
+        
+      
+
+
+
+

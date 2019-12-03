@@ -592,8 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db88f0dc225aae46aa2691e45888d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canhold: 1
-  Cheese: {fileID: 1362039059273298}
   objtrans: {fileID: 590665473}
 --- !u!54 &264171937
 Rigidbody:
@@ -635,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493999348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45, z: -0.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1638637786}
@@ -1262,6 +1260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496093969}
+  - component: {fileID: 1496093970}
   m_Layer: 0
   m_Name: Served
   m_TagString: Untagged
@@ -1283,6 +1282,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1496093970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496093968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1578218335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,8 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7005999ff77cfb4cb7e531166607ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropplace: {fileID: 493999348}
-  cooking: 0
+  CookingTransform: {fileID: 493999348}
 --- !u!1 &1800284050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1764,7 @@ GameObject:
   - component: {fileID: 33070154399734706}
   - component: {fileID: 23948213871701292}
   - component: {fileID: 1362039059273300}
+  - component: {fileID: 1362039059273299}
   m_Layer: 0
   m_Name: cheese
   m_TagString: cheese
@@ -1760,6 +1772,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1362039059273299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362039059273298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180bccdd31f0943488ee57dc9844aec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooktime: 0
 --- !u!65 &1362039059273300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1771,7 +1796,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.76, y: -0.3, z: 0.4}
+  m_Size: {x: 0.42, y: -0.06, z: 0.24}
   m_Center: {x: 0.000000007450581, y: 0, z: 0}
 --- !u!4 &4072938039948988
 Transform:

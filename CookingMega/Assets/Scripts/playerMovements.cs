@@ -5,9 +5,10 @@ using UnityEngine;
 public class playerMovements : MonoBehaviour
 {
 
-    public bool canhold = true;
-    public GameObject Cheese;
-    public Transform objtrans;
+    public static bool canhold = true; // used as a Hand for player to hold the Item
+    GameObject Cheese;
+    GameObject CookingArea;
+    public Transform objtrans;          // the Destination of the food in players position
 
 
     // Start is called before the first frame update
@@ -33,8 +34,10 @@ public class playerMovements : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "cheese")
+        {
             if (!Cheese) // if we don't have anything holding
                 Cheese = other.gameObject;
+        }
     }
     void OnTriggerExit(Collider col)
     {
@@ -53,13 +56,15 @@ public class playerMovements : MonoBehaviour
 
         Cheese.transform.SetParent(objtrans);
         Cheese.transform.localRotation = transform.rotation;
-        //We re-position the ball on our guide object 
+        
         Cheese.transform.position = objtrans.position;
         canhold = false;
     }
 
+  
+
     void throw_drop()
     {
-
+      
     }
 }
