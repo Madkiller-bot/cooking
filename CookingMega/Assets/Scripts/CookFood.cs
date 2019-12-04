@@ -22,6 +22,14 @@ public class CookFood : MonoBehaviour
             if (cooktime > 5 && cooktime < 10)
             {
                 GetComponent<MeshRenderer>().material.color = Color.red;
+                Debug.Log("Food Is Cooked");
+                if(gameObject.name== "cheese")
+                {
+                    playerMovements.Currentfood = "Cheese";
+                    Debug.Log("Cuurent food in had is cheese");
+                }
+                playerMovements.canhold = true; 
+
             }
             //if (cooktime > 10)
             //{

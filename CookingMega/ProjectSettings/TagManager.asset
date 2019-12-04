@@ -8,6 +8,8 @@ TagManager:
   - cheese
   - ball
   - apple
+  - Npc
+  - Counter
   layers:
   - Default
   - TransparentFX

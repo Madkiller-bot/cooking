@@ -8,7 +8,9 @@ public class playerMovements : MonoBehaviour
     public static bool canhold = true; // used as a Hand for player to hold the Item
     GameObject Cheese;
     GameObject CookingArea;
-    public Transform objtrans;          // the Destination of the food in players position
+    public Transform objtrans;
+    public static string Currentfood;
+    public float speed;// the Destination of the food in players position
 
 
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class playerMovements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis("input1") * Time.deltaTime, 0, Input.GetAxis("inputv2") * Time.deltaTime);
+        transform.Translate(Input.GetAxis("input1")* speed * Time.deltaTime, 0, Input.GetAxis("inputv2") * Time.deltaTime*speed);
         if (Input.GetMouseButton(0))
         {
             if (!canhold)

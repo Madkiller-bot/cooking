@@ -31,7 +31,7 @@ public class drop : MonoBehaviour
             Food.transform.position = CookingTransform.transform.position;
             Food.transform.parent = GameObject.Find("CookingPan").transform;
             cook = true;
-            playerMovements.canhold = true;
+         //   playerMovements.canhold = true;
            
 
         }
